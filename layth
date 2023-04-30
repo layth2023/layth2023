@@ -1,0 +1,231 @@
+#include <stdio.h>
+
+int main(void) 
+{
+    char name[] = "Emad Hamadeh";
+    char dob[] = "December 27, 2004";
+    char mobile[] = "059-6426873";
+
+    printf("Name : %s\n", name);
+    printf("DoB : %s\n", dob);
+    printf("Mobile# : %s\n", mobile);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main(void) 
+{
+    char c1 = 'X', c2 = 'M', c3 = 'L';
+
+    printf("The reverse of %c%c%c is %c%c%c\n", c1, c2, c3, c3, c2, c1);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main(void) 
+{
+    int length = 10, width = 5;
+    int perimeter = 2 * (length + width);
+    int area = length * width;
+
+    printf("Rectangle with length %d cm and width %d cm:\n", length, width);
+    printf("Perimeter: %d cm\n", perimeter);
+    printf("Area: %d sq. cm\n", area);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+#define PI 3.14
+
+int main(void) 
+{
+    int radius = 10;
+    double perimeter = 2 * PI * radius;
+    double area = PI * radius * radius;
+
+    printf("Circle with radius %d cm:\n", radius);
+    printf("Perimeter: %.2f cm\n", perimeter);
+    printf("Area: %.2f sq. cm\n", area);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main(void) 
+{
+    int a = 125, b = 12345;
+    long ax = 1234567890;
+    short s = 4043;
+    float x = 2.13459;
+    double dx = 1.1415927;
+    char c = 'W';
+
+    printf("a + c = %d\n", a + c);
+    printf("x + c = %.5f\n", x + c);
+    printf("dx + x = %.7f\n", dx + x);
+    printf("((int) dx) + ax = %ld\n", ((int) dx) + ax);
+    printf("a + x = %.5f\n", a + x);
+    printf("s + b = %d\n", s + b);
+    printf("ax + b = %ld\n", ax + b);
+    printf("s + c = %d\n", s + c);
+    printf("ax + c = %ld\n", ax + c);
+    printf("Decimal value of c = %d\n", c);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main(void) 
+{
+    int x, y, z;
+
+    printf("Enter the first integer: ");
+    scanf("%d", &x);
+
+    printf("Enter the second integer: ");
+    scanf("%d", &y);
+
+    printf("Enter the third integer: ");
+    scanf("%d", &z);
+
+    int max = x;
+
+    if(y > max) {
+        max = y;
+    }
+
+    if(z > max) {
+        max = z;
+    }
+
+    printf("The maximum of %d, %d, and %d is %d\n", x, y, z, max);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main(void) 
+{
+    int i;
+    int sum = 0;
+    int count = 0;
+
+    printf("Even numbers between 1 and 20: ");
+    for(i = 2; i <= 20; i += 2) {
+        printf("%d ", i);
+        sum += i;
+        count++;
+    }
+
+    double average = (double) sum / count;
+    printf("\nAverage of even numbers: %.2f\n", average);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+#define ROWS 1
+#define COLS 5
+
+int main(void) 
+{
+    int arr[ROWS][COLS];
+    int i, j, maxVal, maxRow, maxCol;
+
+    // Input values into the array
+    printf("Enter %d integers:\n", ROWS * COLS);
+    for(i = 0; i < ROWS; i++) {
+        for(j = 0; j < COLS; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    // Find the maximum value and its position
+    maxVal = arr[0][0];
+    maxRow = 0;
+    maxCol = 0;
+    for(i = 0; i < ROWS; i++) {
+        for(j = 0; j < COLS; j++) {
+            if(arr[i][j] > maxVal) {
+                maxVal = arr[i][j];
+                maxRow = i;
+                maxCol = j;
+            }
+        }
+    }
+
+    // Print the result
+    printf("Highest value: %d\n", maxVal);
+    printf("Position: (%d,%d)\n", maxRow, maxCol);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main(void) 
+{
+    int marks[100], i, n;
+    float sum = 0.0, average;
+
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; ++i) {
+        printf("Enter marks of student %d: ", i+1);
+        scanf("%d", &marks[i]);
+
+        if(marks[i] <= 0) {
+            break;
+        }
+
+        sum += marks[i];
+    }
+
+    average = sum / (i + 1);
+    printf("Average marks = %.2f", average);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main(void) 
+{
+    unsigned char a, b;
+    unsigned char result_and, result_or, result_xor;
+
+    printf("Enter two 8-bit binary numbers: ");
+    scanf("%hhu %hhu", &a, &b);
+
+    // Perform bitwise AND, OR, and XOR operations
+    result_and = a & b;
+    result_or = a | b;
+    result_xor = a ^ b;
+
+    // Print the results in binary and hexadecimal
+    printf("AND: 0b%08u (0x%02X)\n", result_and, result_and);
+    printf(" OR: 0b%08u (0x%02X)\n", result_or, result_or);
+    printf("XOR: 0b%08u (0x%02X)\n", result_xor, result_xor);
+
+    return 0;
+}
